@@ -907,6 +907,205 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
 .f-links a{color:var(--text-muted);font-size:0.8rem;text-decoration:none;transition:color 0.2s;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
 .f-links a:hover{color:var(--neon)}
 
+
+/* ── FINAL DEMO UPDATES ── */
+.hamburger{
+  display:none;
+  border:1px solid rgba(61,189,189,0.28);
+  background:rgba(27,107,107,0.18);
+  color:white;
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  font-size:1.35rem;
+  cursor:pointer;
+}
+.mobile-menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.68);
+  backdrop-filter:blur(10px);
+  z-index:450;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.2s;
+}
+.mobile-menu-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+.mobile-menu-drawer{
+  position:absolute;
+  top:0;
+  right:0;
+  width:min(340px,88vw);
+  height:100%;
+  background:var(--dark3);
+  border-left:1px solid rgba(61,189,189,0.25);
+  padding:1.25rem;
+  transform:translateX(100%);
+  transition:transform 0.25s;
+  box-shadow:-20px 0 60px rgba(0,0,0,0.45);
+}
+.mobile-menu-overlay.open .mobile-menu-drawer{transform:translateX(0)}
+.mobile-menu-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;
+  letter-spacing:0.1em;
+  color:white;
+}
+.mobile-close{
+  border:none;
+  background:rgba(255,255,255,0.06);
+  color:white;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:1.35rem;
+  cursor:pointer;
+}
+.mobile-menu-links{
+  display:grid;
+  gap:0.65rem;
+  padding-top:1rem;
+}
+.mobile-menu-links a,.mobile-link-button{
+  width:100%;
+  text-align:left;
+  border:1px solid rgba(61,189,189,0.16);
+  background:rgba(255,255,255,0.04);
+  color:rgba(240,247,247,0.8);
+  text-decoration:none;
+  border-radius:14px;
+  padding:0.85rem 0.95rem;
+  font-size:0.85rem;
+  font-weight:900;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  font-family:'Nunito',sans-serif;
+  cursor:pointer;
+}
+.mobile-menu-links a:hover,.mobile-link-button:hover{
+  color:var(--neon);
+  border-color:rgba(0,229,204,0.35);
+}
+.menu-search-row{
+  margin:-0.75rem 0 1.35rem;
+}
+.menu-search-input{
+  width:100%;
+  border:1px solid rgba(61,189,189,0.22);
+  background:rgba(10,15,15,0.72);
+  color:white;
+  border-radius:16px;
+  padding:0.9rem 1rem;
+  outline:none;
+  font-family:'Nunito',sans-serif;
+  font-size:0.92rem;
+}
+.menu-search-input:focus{
+  border-color:var(--neon);
+  box-shadow:0 0 0 3px rgba(0,229,204,0.08);
+}
+.badge-row{
+  display:flex;
+  gap:0.45rem;
+  flex-wrap:wrap;
+}
+.bestseller-badge{
+  display:inline-flex;
+  align-self:flex-start;
+  color:#FFB830;
+  background:rgba(255,184,48,0.08);
+  border:1px solid rgba(255,184,48,0.22);
+  padding:0.25rem 0.6rem;
+  border-radius:999px;
+  font-size:0.68rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-weight:900;
+}
+.m-status.out{
+  color:var(--neon2);
+  background:rgba(255,107,157,0.08);
+  border-color:rgba(255,107,157,0.22);
+}
+.add-btn:disabled,.modal-btn:disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  transform:none !important;
+  box-shadow:none;
+}
+.no-results{
+  grid-column:1 / -1;
+  background:var(--dark3);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  color:var(--text-muted);
+  text-align:center;
+}
+.cart-empty .empty-menu-btn{
+  margin-top:1rem;
+  display:inline-flex;
+  text-decoration:none;
+}
+.checkout-form textarea{
+  width:100%;
+  min-height:82px;
+  resize:vertical;
+  border:1px solid rgba(61,189,189,0.22);
+  background:rgba(10,15,15,0.7);
+  border-radius:12px;
+  padding:0.78rem 0.9rem;
+  color:white;
+  outline:none;
+  font-family:'Nunito',sans-serif;
+}
+.checkout-form textarea:focus{
+  border-color:var(--neon);
+  box-shadow:0 0 0 3px rgba(0,229,204,0.08);
+}
+.optional-label{
+  color:rgba(240,247,247,0.38);
+  font-weight:800;
+  letter-spacing:0.05em;
+}
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:6.1rem;
+  transform:translateX(-50%) translateY(10px);
+  z-index:700;
+  background:rgba(17,24,24,0.96);
+  border:1px solid rgba(0,229,204,0.28);
+  color:white;
+  border-radius:999px;
+  padding:0.75rem 1rem;
+  font-size:0.82rem;
+  font-weight:900;
+  letter-spacing:0.04em;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.2s, transform 0.2s;
+  box-shadow:0 12px 40px rgba(0,0,0,0.35);
+}
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+.built-by{
+  color:rgba(240,247,247,0.55);
+}
+.built-by strong{color:var(--teal-glow)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   nav{padding:1rem 1.25rem}
@@ -919,6 +1118,14 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
   .order-section{padding:4rem 1.5rem}
   footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}
 }
+
+@media(max-width:768px){
+  .hamburger{display:inline-flex;align-items:center;justify-content:center}
+  .menu-helper-row{align-items:stretch}
+  .table-chip,.gst-chip{width:100%;justify-content:center}
+  .toast{bottom:5.3rem;width:calc(100% - 2rem);justify-content:center;text-align:center}
+}
+
 </style>
 </head>
 <body>
@@ -933,12 +1140,33 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#vibe">About</a></li>
     <li><a href="#menu">Menu</a></li>
+    <li><a href="#vibe">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#visit">Visit</a></li>
-    <li><a href="#order" class="nav-cta">Order Now</a></li>
+    <li><a href="#menu" class="nav-cta">Order Now</a></li>
   </ul>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
 </nav>
+
+<div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-head">
+      <div class="mobile-menu-title">COFFEA</div>
+      <button class="mobile-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#menu" data-mobile-link>Menu</a>
+      <a href="#menu" data-mobile-link data-category-link="best-sellers">Best Sellers</a>
+      <button class="mobile-link-button" id="mobileCartLink">Cart</button>
+      <a href="#vibe" data-mobile-link>About</a>
+      <a href="#reviews" data-mobile-link>Reviews</a>
+      <a href="#visit" data-mobile-link>Visit</a>
+      <a href="https://www.instagram.com/coffeabareilly/" target="_blank" data-mobile-link>Instagram</a>
+      <a href="tel:+918279303061" data-mobile-link>Call</a>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -991,49 +1219,6 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
   </div>
 </section>
 
-<!-- ABOUT / VIBE -->
-<section id="vibe" class="vibe-section">
-  <div class="vibe-grid">
-    <div>
-      <div class="s-label">Our Vibe</div>
-      <h2 class="s-title">NOT JUST A CAFÉ.<br>IT'S A FEELING.</h2>
-      <p class="s-sub">Walk in to neon butterflies, artsy murals, velvet sofas and the smell of freshly brewed coffee. Coffea isn't just a place to eat — it's a place to be.</p>
-      <div class="vibe-cards">
-        <div class="vibe-card">
-          <div class="vibe-card-icon">🛋️</div>
-          <div class="vibe-card-title">Cozy Seating</div>
-          <div class="vibe-card-desc">Plush velvet sofas and warm wooden tables — stay as long as you like</div>
-        </div>
-        <div class="vibe-card">
-          <div class="vibe-card-icon">🎨</div>
-          <div class="vibe-card-title">Artsy Murals</div>
-          <div class="vibe-card-desc">Hand-painted walls that make every corner a perfect photo spot</div>
-        </div>
-        <div class="vibe-card">
-          <div class="vibe-card-icon">💡</div>
-          <div class="vibe-card-title">Neon Ambiance</div>
-          <div class="vibe-card-desc">LED strips, neon signs, butterfly lights — moody and magical</div>
-        </div>
-        <div class="vibe-card">
-          <div class="vibe-card-icon">📶</div>
-          <div class="vibe-card-title">Free Wi-Fi</div>
-          <div class="vibe-card-desc">Work, study or just scroll — we've got you covered</div>
-        </div>
-      </div>
-    </div>
-    <div class="mural-card">
-      <div class="mural-art">🌿</div>
-      <div class="mural-quote">"Crafted by the vision of dreams — <em>Melt You</em> one sip at a time"</div>
-      <div class="neon-tag">Coffea Cafe, Bareilly</div>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.5rem">
-        <div class="pill">☕ Great Coffee</div>
-        <div class="pill">🎵 Chill Vibes</div>
-        <div class="pill">📸 Insta-Worthy</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- MENU -->
 <section id="menu" class="menu-section">
   <div class="menu-top">
@@ -1048,6 +1233,10 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
   <div class="menu-helper-row">
     <div class="table-chip">Table: <strong id="tableValue">Not selected</strong></div>
     <div class="gst-chip">GST 5% will be added at checkout</div>
+  </div>
+
+  <div class="menu-search-row">
+    <input class="menu-search-input" id="menuSearch" type="search" placeholder="Search latte, mocha, caramel, biscoff...">
   </div>
 
   <div id="menuGrid" class="menu-grid active"></div>
@@ -1116,6 +1305,7 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
     <div class="cart-empty" id="cartEmpty">
       <div>🛒</div>
       <p>Your cart is empty. Add something from the menu.</p>
+      <a class="btn-primary empty-menu-btn" href="#menu" id="emptyCartMenuBtn">Go To Menu</a>
     </div>
 
     <div class="cart-summary" id="cartSummary">
@@ -1133,6 +1323,14 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
         Phone Number
         <input type="tel" id="customerPhone" placeholder="10 digit mobile number" maxlength="10">
       </label>
+      <label>
+        Number of Guests
+        <input type="number" id="guestCount" placeholder="People on this table" min="1" max="20">
+      </label>
+      <label>
+        Special Instructions <span class="optional-label">Optional</span>
+        <textarea id="specialInstructions" placeholder="Less sugar, no ice, extra hot, serve later..."></textarea>
+      </label>
       <p class="form-error" id="checkoutError"></p>
       <button class="btn-primary checkout-btn" id="whatsappOrderBtn">Order on WhatsApp</button>
       <p class="checkout-note">WhatsApp will open with your full order message. Please press send there to place the order.</p>
@@ -1141,8 +1339,52 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
 </div>
 
 
+<!-- ABOUT / VIBE -->
+<section id="vibe" class="vibe-section">
+  <div class="vibe-grid">
+    <div>
+      <div class="s-label">Our Vibe</div>
+      <h2 class="s-title">NOT JUST A CAFÉ.<br>IT'S A FEELING.</h2>
+      <p class="s-sub">Walk in to neon butterflies, artsy murals, velvet sofas and the smell of freshly brewed coffee. Coffea isn't just a place to eat — it's a place to be.</p>
+      <div class="vibe-cards">
+        <div class="vibe-card">
+          <div class="vibe-card-icon">🛋️</div>
+          <div class="vibe-card-title">Cozy Seating</div>
+          <div class="vibe-card-desc">Plush velvet sofas and warm wooden tables — stay as long as you like</div>
+        </div>
+        <div class="vibe-card">
+          <div class="vibe-card-icon">🎨</div>
+          <div class="vibe-card-title">Artsy Murals</div>
+          <div class="vibe-card-desc">Hand-painted walls that make every corner a perfect photo spot</div>
+        </div>
+        <div class="vibe-card">
+          <div class="vibe-card-icon">💡</div>
+          <div class="vibe-card-title">Neon Ambiance</div>
+          <div class="vibe-card-desc">LED strips, neon signs, butterfly lights — moody and magical</div>
+        </div>
+        <div class="vibe-card">
+          <div class="vibe-card-icon">📶</div>
+          <div class="vibe-card-title">Free Wi-Fi</div>
+          <div class="vibe-card-desc">Work, study or just scroll — we've got you covered</div>
+        </div>
+      </div>
+    </div>
+    <div class="mural-card">
+      <div class="mural-art">🌿</div>
+      <div class="mural-quote">"Crafted by the vision of dreams — <em>Melt You</em> one sip at a time"</div>
+      <div class="neon-tag">Coffea Cafe, Bareilly</div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.5rem">
+        <div class="pill">☕ Great Coffee</div>
+        <div class="pill">🎵 Chill Vibes</div>
+        <div class="pill">📸 Insta-Worthy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- REVIEWS -->
-<section class="reviews-section">
+<section id="reviews" class="reviews-section">
   <div class="s-label">What People Say</div>
   <h2 class="s-title">REAL REVIEWS</h2>
   <div class="reviews-grid">
@@ -1195,6 +1437,7 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.4rem">
           <span class="pill">🍽️ Zomato</span>
           <span class="pill">🛵 Swiggy</span>
+          <a class="pill" href="https://www.instagram.com/coffeabareilly/" target="_blank" rel="noopener">📸 Instagram</a>
         </div>
       </div>
     </div>
@@ -1222,15 +1465,20 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
   <h2 class="s-title">GET YOUR<br>COFFEA FIX</h2>
   <p class="s-sub" style="color:rgba(240,247,247,0.55)">Order directly on WhatsApp — no platform charges, no markups. Or find us on Zomato and Swiggy.</p>
   <div class="order-options">
-    <a href="https://wa.me/918279303061" class="o-card">
+    <a href="#menu" class="o-card">
       <div class="o-icon">💬</div>
-      <div class="o-name">WhatsApp</div>
-      <div class="o-sub">Direct · No extra charges</div>
+      <div class="o-name">WhatsApp Order</div>
+      <div class="o-sub">Build your cart first</div>
     </a>
     <a href="tel:+918279303061" class="o-card">
       <div class="o-icon">📞</div>
       <div class="o-name">Call Us</div>
       <div class="o-sub">+91 82793 03061</div>
+    </a>
+    <a href="https://www.instagram.com/coffeabareilly/" target="_blank" rel="noopener" class="o-card">
+      <div class="o-icon">📸</div>
+      <div class="o-name">Instagram</div>
+      <div class="o-sub">@coffeabareilly</div>
     </a>
     <a href="#" class="o-card">
       <div class="o-icon">🍽️</div>
@@ -1251,18 +1499,34 @@ footer p{font-size:0.78rem;color:var(--text-muted)}
     <div class="f-logo">COFFEA</div>
     <div class="f-sub">Brew On the Rocks · Bareilly</div>
   </div>
-  <p>© 2025 Coffea Cafe. All rights reserved.</p>
+  <p class="built-by">© 2026 Coffea Cafe. Built by <strong>Himanshu Sagar</strong>.</p>
   <div class="f-links">
-    <a href="#vibe">About</a>
     <a href="#menu">Menu</a>
+    <a href="#vibe">About</a>
+    <a href="#reviews">Reviews</a>
     <a href="#visit">Visit</a>
-    <a href="#order">Order</a>
+    <a href="https://www.instagram.com/coffeabareilly/" target="_blank" rel="noopener">Instagram</a>
   </div>
 </footer>
 
 <script>
 const WHATSAPP_NUMBER = "918279303061";
 const GST_RATE = 0.05;
+const INSTAGRAM_URL = "https://www.instagram.com/coffeabareilly/";
+
+const TABLE_TOKENS = {
+  "T1QR92": "T1",
+  "T2QR83": "T2",
+  "T3QR64": "T3",
+  "T4QR29": "T4",
+  "T5QR51": "T5",
+  "T6QR76": "T6",
+  "T7QR18": "T7",
+  "T8QR37": "T8",
+  "T9QR71": "T9",
+  "OUT1QR44": "OUTSIDE-1",
+  "OUT2QR58": "OUTSIDE-2"
+};
 
 const ADDONS = [
   { name: "None", price: 0 },
@@ -1286,7 +1550,8 @@ const menuData = [
         price: 109,
         ingredients: ["Espresso"],
         description: "A concentrated shot of rich espresso with bold flavour, intense aroma and a smooth finish.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "affogato",
@@ -1294,7 +1559,8 @@ const menuData = [
         price: 169,
         ingredients: ["Vanilla Ice Cream", "Espresso Shot"],
         description: "A classic dessert coffee where hot espresso melts into creamy vanilla ice cream.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "cafe-americano",
@@ -1302,7 +1568,8 @@ const menuData = [
         price: 179,
         ingredients: ["Espresso", "Hot Water"],
         description: "A clean and full-bodied coffee made by diluting espresso with hot water for a balanced taste.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "cafe-mocha",
@@ -1310,7 +1577,8 @@ const menuData = [
         price: 199,
         ingredients: ["Espresso", "Milk Froth", "Milk", "Chocolate"],
         description: "A comforting blend of espresso, milk and chocolate finished with velvety froth.",
-        available: true
+        available: true,
+        isBestseller: true
       },
       {
         id: "cafe-latte",
@@ -1318,7 +1586,8 @@ const menuData = [
         price: 199,
         ingredients: ["Espresso", "Milk Froth", "Milk"],
         description: "A smooth espresso-based coffee balanced with steamed milk and a light layer of froth.",
-        available: true
+        available: true,
+        isBestseller: true
       },
       {
         id: "cappuccino",
@@ -1326,7 +1595,8 @@ const menuData = [
         price: 199,
         ingredients: ["Espresso", "Mostly Milk Froth", "Milk"],
         description: "A rich espresso drink with a generous layer of airy milk froth and a creamy finish.",
-        available: true
+        available: true,
+        isBestseller: true
       },
       {
         id: "cinnamon-latte",
@@ -1334,7 +1604,8 @@ const menuData = [
         price: 199,
         ingredients: ["Cinnamon", "Milk", "Milk Froth", "Espresso"],
         description: "A warm and aromatic latte infused with the comforting flavour of cinnamon.",
-        available: true
+        available: true,
+        isBestseller: false
       }
     ]
   },
@@ -1350,7 +1621,8 @@ const menuData = [
         price: 139,
         ingredients: ["Espresso", "Ice"],
         description: "A chilled espresso served over ice for a bold and refreshing coffee hit.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "iced-americano",
@@ -1358,7 +1630,8 @@ const menuData = [
         price: 159,
         ingredients: ["Espresso", "Ice", "Water"],
         description: "A crisp iced coffee with espresso, chilled water and a clean refreshing finish.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "iced-caramel",
@@ -1366,7 +1639,8 @@ const menuData = [
         price: 159,
         ingredients: ["Espresso", "Caramel", "Milk", "Ice"],
         description: "A creamy iced coffee sweetened with caramel and finished with smooth espresso.",
-        available: true
+        available: true,
+        isBestseller: true
       },
       {
         id: "ice-latte",
@@ -1374,7 +1648,8 @@ const menuData = [
         price: 159,
         ingredients: ["Espresso", "Milk", "Ice"],
         description: "A smooth and refreshing mix of espresso, chilled milk and ice.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "ice-mocha",
@@ -1382,7 +1657,8 @@ const menuData = [
         price: 159,
         ingredients: ["Espresso", "Milk", "Chocolate", "Ice"],
         description: "A chilled chocolate coffee blend that balances sweetness with espresso richness.",
-        available: true
+        available: true,
+        isBestseller: true
       }
     ]
   },
@@ -1398,7 +1674,8 @@ const menuData = [
         price: 169,
         ingredients: ["Espresso", "Milk", "Vanilla Ice Cream"],
         description: "A creamy blended coffee with espresso, milk and vanilla ice cream for a smooth chilled treat.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "hazelnut-fresppesso",
@@ -1406,7 +1683,8 @@ const menuData = [
         price: 199,
         ingredients: ["Espresso", "Milk", "Vanilla Ice Cream", "Hazelnut Syrup"],
         description: "A rich and nutty frozen coffee drink built on espresso, vanilla ice cream and hazelnut syrup.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "irish-fresppesso",
@@ -1414,7 +1692,8 @@ const menuData = [
         price: 199,
         ingredients: ["Espresso", "Milk", "Vanilla Ice Cream", "Irish Syrup"],
         description: "A creamy espresso blend with smooth Irish-flavoured syrup for a bold chilled experience.",
-        available: true
+        available: true,
+        isBestseller: false
       },
       {
         id: "brownie-fresppesso",
@@ -1422,7 +1701,8 @@ const menuData = [
         price: 209,
         ingredients: ["Brownie", "Vanilla Ice Cream", "Milk"],
         description: "A decadent frozen beverage blending brownie, vanilla ice cream and milk.",
-        available: true
+        available: false,
+        isBestseller: false
       },
       {
         id: "biscoff-fresppesso",
@@ -1430,22 +1710,37 @@ const menuData = [
         price: 229,
         ingredients: ["Biscoff Spread", "Vanilla Ice Cream", "Milk"],
         description: "A creamy indulgent drink featuring the caramelised flavour of Biscoff spread.",
-        available: true
+        available: true,
+        isBestseller: true
       }
     ]
   }
 ];
 
-let activeCategoryId = menuData[0].id;
+const categoryTabs = [
+  { id: "best-sellers", label: "Best Sellers" },
+  ...menuData.map(category => ({ id: category.id, label: category.label }))
+];
+
+let activeCategoryId = "best-sellers";
+let searchQuery = "";
 let selectedItem = null;
 let selectedAddon = ADDONS[0];
 let cart = [];
+let toastTimer = null;
 
 const rupee = (value) => `₹${Number(value).toFixed(2).replace(/\.00$/, "")}`;
 
 function getTableNumber() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("table")?.trim() || "Not selected";
+  const token = params.get("token")?.trim();
+
+  if (!token) return "Not selected";
+  return TABLE_TOKENS[token] || "Invalid table QR";
+}
+
+function getAllMenuEntries() {
+  return menuData.flatMap(category => category.items.map(item => ({ item, category })));
 }
 
 function findCategory(categoryId) {
@@ -1453,16 +1748,32 @@ function findCategory(categoryId) {
 }
 
 function findItem(itemId) {
-  for (const category of menuData) {
-    const item = category.items.find(menuItem => menuItem.id === itemId);
-    if (item) return { item, category };
-  }
-  return null;
+  return getAllMenuEntries().find(entry => entry.item.id === itemId) || null;
+}
+
+function itemMatchesSearch(item, category, query) {
+  if (!query) return true;
+  const haystack = [
+    item.name,
+    category.label,
+    item.description,
+    ...item.ingredients
+  ].join(" ").toLowerCase();
+
+  return haystack.includes(query.toLowerCase());
+}
+
+function getVisibleEntries() {
+  const entries = activeCategoryId === "best-sellers"
+    ? getAllMenuEntries().filter(({ item }) => item.isBestseller)
+    : (findCategory(activeCategoryId)?.items || []).map(item => ({ item, category: findCategory(activeCategoryId) }));
+
+  return entries.filter(({ item, category }) => itemMatchesSearch(item, category, searchQuery));
 }
 
 function renderTabs() {
   const tabs = document.getElementById("menuTabs");
-  tabs.innerHTML = menuData.map(category => `
+  tabs.innerHTML = categoryTabs.map(category => `
     <button class="tab ${category.id === activeCategoryId ? "active" : ""}" data-category="${category.id}">
       ${category.label}
     </button>
@@ -1479,9 +1790,14 @@ function renderTabs() {
 
 function renderMenu() {
   const grid = document.getElementById("menuGrid");
-  const category = findCategory(activeCategoryId);
+  const entries = getVisibleEntries();
 
-  grid.innerHTML = category.items.map(item => {
+  if (entries.length === 0) {
+    grid.innerHTML = `<div class="no-results">No matching items found. Try searching latte, mocha, caramel, biscoff or espresso.</div>`;
+    return;
+  }
+
+  grid.innerHTML = entries.map(({ item, category }) => {
     const ingredientsPreview = item.ingredients.slice(0, 3).join(", ");
     return `
       <div class="m-card">
@@ -1492,7 +1808,10 @@ function renderMenu() {
           </div>
           <div class="m-icon-wrap">${category.icon}</div>
         </div>
-        <span class="m-status">${item.available ? "Available" : "Out of Stock"}</span>
+        <div class="badge-row">
+          ${item.isBestseller ? `<span class="bestseller-badge">★ Bestseller</span>` : ""}
+          <span class="m-status ${item.available ? "" : "out"}">${item.available ? "Available" : "Out of Stock"}</span>
+        </div>
         <div class="m-desc">${item.description}</div>
         <div class="m-ingredients-preview">Ingredients: ${ingredientsPreview}${item.ingredients.length > 3 ? "..." : ""}</div>
         <div class="m-price">${rupee(item.price)}</div>
@@ -1504,6 +1823,8 @@ function renderMenu() {
     `;
   }).join("");
 
+  // Intentional: both card buttons open the item detail modal for this demo version.
+  // This preserves the current behavior as requested and lets users choose an add-on before adding.
   grid.querySelectorAll("button[data-item]").forEach(button => {
     button.addEventListener("click", () => {
       openItemModal(button.dataset.item);
@@ -1550,6 +1871,10 @@ function openItemModal(itemId) {
     addonOptions.innerHTML = "";
   }
 
+  const confirmButton = document.getElementById("confirmAddToCart");
+  confirmButton.disabled = !selectedItem.available;
+  confirmButton.textContent = selectedItem.available ? "Add To Cart" : "Out of Stock";
+
   document.getElementById("itemModal").classList.add("open");
   document.getElementById("itemModal").setAttribute("aria-hidden", "false");
 }
@@ -1559,11 +1884,25 @@ function closeItemModal() {
   document.getElementById("itemModal").setAttribute("aria-hidden", "true");
 }
 
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
 function addSelectedItemToCart() {
   if (!selectedItem) return;
 
   const result = findItem(selectedItem.id);
-  const addonToUse = result?.category.supportsAddons ? selectedAddon : ADDONS[0];
+  if (!result || !result.item.available) {
+    showToast("This item is currently out of stock");
+    return;
+  }
+
+  const addonToUse = result.category.supportsAddons ? selectedAddon : ADDONS[0];
   const cartKey = `${selectedItem.id}__${addonToUse.name}`;
 
   const existing = cart.find(entry => entry.key === cartKey);
@@ -1584,7 +1923,7 @@ function addSelectedItemToCart() {
 
   closeItemModal();
   renderCart();
-  openCart();
+  showToast(`${selectedItem.name} added to cart`);
 }
 
 function calculateCart() {
@@ -1678,6 +2017,16 @@ function closeCart() {
   document.getElementById("cartBackdrop").setAttribute("aria-hidden", "true");
 }
 
+function openMobileMenu() {
+  document.getElementById("mobileMenu").classList.add("open");
+  document.getElementById("mobileMenu").setAttribute("aria-hidden", "false");
+}
+
+function closeMobileMenu() {
+  document.getElementById("mobileMenu").classList.remove("open");
+  document.getElementById("mobileMenu").setAttribute("aria-hidden", "true");
+}
+
 function generateOrderId() {
   const now = new Date();
   const datePart = [
@@ -1689,18 +2038,23 @@ function generateOrderId() {
   return `CF-${datePart}-${randomPart}`;
 }
 
-function validateCheckout(name, phone) {
+function validateCheckout(name, phone, guests, table) {
   if (cart.length === 0) return "Please add at least one item to cart.";
+  if (table === "Not selected") return "Table not detected. Please scan the QR placed on your table.";
+  if (table === "Invalid table QR") return "Invalid table QR. Please scan the correct QR placed on your table.";
   if (name.trim().length < 2) return "Please enter a valid name.";
   if (!/^[6-9]\d{9}$/.test(phone.trim())) return "Please enter a valid 10 digit Indian mobile number.";
+  if (!guests || Number(guests) < 1 || Number(guests) > 20) return "Please enter the number of guests on this table.";
   return "";
 }
 
 function buildWhatsAppMessage() {
   const name = document.getElementById("customerName").value.trim();
   const phone = document.getElementById("customerPhone").value.trim();
+  const guests = document.getElementById("guestCount").value.trim();
+  const instructions = document.getElementById("specialInstructions").value.trim();
   const table = getTableNumber();
-  const error = validateCheckout(name, phone);
+  const error = validateCheckout(name, phone, guests, table);
   const errorBox = document.getElementById("checkoutError");
 
   if (error) {
@@ -1728,6 +2082,7 @@ I want to place an order.
 
 Order ID: ${orderId}
 Table: ${table}
+Guests: ${guests}
 
 Customer Name: ${name}
 Phone: ${phone}
@@ -1735,7 +2090,7 @@ Phone: ${phone}
 Items:
 ${itemLines}
 
-Subtotal: ${rupee(totals.subtotal)}
+${instructions ? `Special Instructions:\n${instructions}\n\n` : ""}Subtotal: ${rupee(totals.subtotal)}
 GST (5%): ${rupee(totals.gst)}
 Final Total: ${rupee(totals.total)}
 
@@ -1759,6 +2114,11 @@ function initializePage() {
   renderMenu();
   renderCart();
 
+  document.getElementById("menuSearch").addEventListener("input", (event) => {
+    searchQuery = event.target.value.trim();
+    renderMenu();
+  });
+
   document.getElementById("closeItemModal").addEventListener("click", closeItemModal);
   document.getElementById("cancelItemModal").addEventListener("click", closeItemModal);
   document.getElementById("confirmAddToCart").addEventListener("click", addSelectedItemToCart);
@@ -1774,13 +2134,27 @@ function initializePage() {
   });
   document.getElementById("whatsappOrderBtn").addEventListener("click", orderOnWhatsApp);
 
-  const quickOrder = document.querySelector(".o-card[href='https://wa.me/918279303061']");
-  if (quickOrder) {
-    quickOrder.addEventListener("click", (event) => {
-      event.preventDefault();
-      openCart();
+  document.getElementById("emptyCartMenuBtn").addEventListener("click", closeCart);
+
+  document.getElementById("hamburgerBtn").addEventListener("click", openMobileMenu);
+  document.getElementById("mobileMenuClose").addEventListener("click", closeMobileMenu);
+  document.getElementById("mobileMenu").addEventListener("click", (event) => {
+    if (event.target.id === "mobileMenu") closeMobileMenu();
+  });
+  document.querySelectorAll("[data-mobile-link]").forEach(link => {
+    link.addEventListener("click", () => {
+      if (link.dataset.categoryLink) {
+        activeCategoryId = link.dataset.categoryLink;
+        renderTabs();
+        renderMenu();
+      }
+      closeMobileMenu();
     });
-  }
+  });
+  document.getElementById("mobileCartLink").addEventListener("click", () => {
+    closeMobileMenu();
+    openCart();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", initializePage);
